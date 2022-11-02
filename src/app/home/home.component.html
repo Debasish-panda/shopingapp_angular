@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+    <div class="navbar-brand align-item-center d-flex">
+      <i>
+        <strong>Shoping</strong>
+      </i>
+      
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="search product">
+
+      </div>
+      <span class="fas fa-search search-icon"></span>
+      
+    </div>
+    <button routerLink="/cart" class="btn btn-primary">
+      <i style="font-size: 30px" class="fas fa-cart-plus"></i>
+      <div style="font-size: 10px" class="badge bg-danger">{{totalItem}}</div>
+    </button>
+  </div>
+</nav>
+
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item"><a>
+      <img src="">
+      <h5>Electronics</h5>
+    </a></div>
+    <div class="item"><a>
+      <img src="">
+      <h5>Jewelery</h5>
+    </a></div>
+    <div class="item"><a>
+      <img src="">
+      <h5>Men clothing</h5>
+    </a></div>
+    <div class="item"><a>
+      <img src="">
+      <h5>Women clothing</h5>
+    </a></div>
+  </div>
+</div>
+
+<div class="card-top container-fluid">
+
+  </div>
+  <div  class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of productlist">
+        <div class="card col-md-3">
+          <img src="{{item.image}}">
+          <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{item.title}}</h4>
+          <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{item.description}}</p>
+          <p>Price: {{item.price}}</p>
+          <button class="btn btn-primary" (click)="addtocart(item)">Add ti cart</button>
+        </div>
+      </ng-container>
+      
+    </div>
+    
+  </div>
+
+  <!--https://www.youtube.com/watch?v=855KrFfF9-w-->
